@@ -83,13 +83,12 @@
   </style>
   {{login-buttons action="externalLogin"}}
 {{/d-modal-body}}
-<div class="modal-footer">
+<div class="modal-footer modal-footer-custom">
   {{#if ssoEnabled}}
     {{d-button label="guest_gate.modal.log_in" action="showLogin"}}
-    &nbsp;&nbsp;or&nbsp;
     {{d-button label="guest_gate.modal.sign_up" action="showCreateAccount"}}
   {{else}}
-  <a href {{action "showLogin"}}>{{i18n 'log_in'}}</a> |
-  <a href {{action "showCreateAccount"}}>{{i18n 'create_account.title'}}</a>
+  <a id="custom-modal-create-account-link" href {{action "showCreateAccount"}}>{{i18n 'create_account.title'}}</a>
+  <br/><br/><span class="text">Allerede medlem?</span> <a id="custom-modal-login-link" href {{action "showLogin"}}>{{i18n 'log_in'}}</a>
   {{/if}}
 </div>
